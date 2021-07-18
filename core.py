@@ -4,7 +4,6 @@ from discord.ext import commands
 # Variables - customize your bot here
 prefix = '+'
 filtered_words = {'YourWords', 'GoHere'}
-welcome_message = f'{member} joined the server!'  # Change your welcome message here
 
 # Non customizable variables
 intents = discord.Intents.default()
@@ -19,6 +18,7 @@ async def on_ready():                                   # Shows if your bot is r
 
 @bot.event
 async def on_member_join(member):
+    welcome_message = f'{member} joined the server!'    # Change your welcome message here
     channel = bot.get_channel(847949897445408821)
     await channel.send(welcome_message)
 
